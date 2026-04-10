@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Independent Business Homepage</title>
+    <meta
+      name="description"
+      content="個人事業主向けの営業用ホームページ。サービス内容、強み、実績、問い合わせ導線を1ページで整理。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top">
+          <span class="brand-mark">K</span>
+          <span class="brand-copy">
+            <span data-i18n="brand.name">Kensuke Shigyo</span>
+            <span data-i18n="brand.role">Independent IT Consultant</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#strengths" data-i18n="nav.strengths">Strengths</a>
+          <a href="#results" data-i18n="nav.results">Results</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-switch" role="group" aria-label="Language switcher">
+            <button type="button" class="lang-btn is-active" data-lang-toggle="ja">
+              JP
+            </button>
+            <button type="button" class="lang-btn" data-lang-toggle="en">
+              EN
+            </button>
+          </div>
+          <a class="button button-small" data-contact-link href="mailto:hello@example.com">
+            <span data-i18n="cta.header">相談する</span>
+          </a>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero section">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Freelance / Independent Business</p>
+            <h1 data-i18n="hero.title">
+              課題を整理し、Webと業務改善を実装まで前に進めます。
+            </h1>
+            <p class="hero-lead" data-i18n="hero.lead">
+              個人事業主として、Web制作、業務改善、技術支援を一気通貫で提供します。わかりやすい整理と、実際に使える形まで持っていく実装力を重視しています。
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#services" data-i18n="cta.primary">サービスを見る</a>
+              <a class="button button-ghost" data-contact-link href="mailto:hello@example.com">
+                <span data-i18n="cta.secondary">メールで問い合わせる</span>
+              </a>
+            </div>
+            <ul class="hero-points">
+              <li data-i18n="hero.points.0">要件整理から実装までワンストップ</li>
+              <li data-i18n="hero.points.1">小規模でも相談しやすい柔軟な伴走</li>
+              <li data-i18n="hero.points.2">日英切替対応のシンプルな情報設計</li>
+            </ul>
+          </div>
+
+          <aside class="hero-card" aria-label="Profile summary">
+            <p class="card-label" data-i18n="profile.label">Profile</p>
+            <h2 data-i18n="profile.name">Kensuke Shigyo</h2>
+            <p class="profile-role" data-i18n="profile.role">Independent IT Consultant</p>
+            <dl class="profile-list">
+              <div>
+                <dt data-i18n="profile.fields.area">対応領域</dt>
+                <dd data-i18n="profile.values.area">Web制作 / 技術支援 / 業務改善</dd>
+              </div>
+              <div>
+                <dt data-i18n="profile.fields.base">拠点</dt>
+                <dd data-i18n="profile.values.base">Japan / Remote</dd>
+              </div>
+              <div>
+                <dt data-i18n="profile.fields.contact">連絡先</dt>
+                <dd>
+                  <a data-contact-link href="mailto:hello@example.com">hello@example.com</a>
+                </dd>
+              </div>
+            </dl>
+          </aside>
+        </section>
+
+        <section class="section section-grid" id="about">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="about.eyebrow">About</p>
+            <h2 data-i18n="about.title">事業について</h2>
+          </div>
+          <div class="about-copy">
+            <p data-i18n="about.body.0">
+              事業課題をヒアリングし、必要な整理、設計、実装、改善までを一貫して支援します。単なる制作受託ではなく、運用後の使いやすさや継続性まで含めて設計します。
+            </p>
+            <p data-i18n="about.body.1">
+              個人で動く強みを活かし、意思決定の速さと柔軟な対応で、小規模案件から継続支援まで扱います。初期相談の段階から、何を作るべきかを一緒に明確にします。
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="services">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+            <h2 data-i18n="services.title">提供サービス</h2>
+          </div>
+          <div class="card-grid" id="services-list"></div>
+        </section>
+
+        <section class="section" id="strengths">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="strengths.eyebrow">Strengths</p>
+            <h2 data-i18n="strengths.title">選ばれる理由</h2>
+          </div>
+          <div class="feature-grid" id="strengths-list"></div>
+        </section>
+
+        <section class="section" id="results">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="results.eyebrow">Results</p>
+            <h2 data-i18n="results.title">実績イメージ</h2>
+          </div>
+          <div class="results-grid" id="results-list"></div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+          <div class="contact-copy">
+            <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+            <h2 data-i18n="contact.title">まずは現在の課題を共有してください</h2>
+            <p data-i18n="contact.body">
+              要件が固まっていない段階でも相談可能です。課題整理、進め方の相談、実装の見積もりなど、メールで受け付けています。
+            </p>
+          </div>
+          <div class="contact-panel">
+            <a class="button" data-contact-link href="mailto:hello@example.com">
+              <span data-i18n="contact.cta">メールで問い合わせる</span>
+            </a>
+            <p class="contact-note" data-i18n="contact.note">
+              初版ではメールでの問い合わせ導線を採用しています。
+            </p>
+            <p class="contact-email">
+              <a data-contact-link href="mailto:hello@example.com">hello@example.com</a>
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
