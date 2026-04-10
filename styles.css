@@ -244,6 +244,7 @@ h1 {
 
 .cta-primary:hover { opacity: 0.75; }
 .cta-primary:hover::after { transform: translateX(3px); }
+.cta-primary { transition: opacity 0.2s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
 
 .cta-email {
   font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
@@ -392,7 +393,7 @@ h1 {
 /* ─── Reduced motion ──────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .h1-line-inner, .anim-fade {
+  .h1-line-inner, .anim-fade, .ch {
     animation: none;
   }
   .reveal {
@@ -401,6 +402,7 @@ h1 {
     filter: none;
     transition: none;
   }
+  .scroll-progress { display: none; }
 }
 
 /* ─── Responsive: 900px ───────────────── */
@@ -491,3 +493,38 @@ h1 {
 
   .about-body p { font-size: 1rem; }
 }
+
+/* ─── H1 char stagger ─────────────────── */
+
+.h1-line-inner.is-split { animation: none; }
+
+.ch {
+  display: inline-block;
+  animation: charUp 1s cubic-bezier(0.16, 1, 0.3, 1) var(--char-delay, 0s) both;
+}
+
+@keyframes charUp {
+  from { transform: translateY(110%); }
+  to   { transform: translateY(0); }
+}
+
+/* ─── Scroll progress bar ─────────────── */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--text);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0.22;
+}
+
+/* ─── Active nav section ──────────────── */
+
+.site-nav a.is-active { color: var(--text); }
+.site-nav a.is-active::after { transform: scaleX(1); }
