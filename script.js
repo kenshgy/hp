@@ -1,5 +1,10 @@
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// ─── Footer: 年度自動更新 ─────────────────────────────────
+document.querySelectorAll("[data-year]").forEach(
+  (el) => (el.textContent = new Date().getFullYear())
+);
+
 // ─── H1: 文字単位ウェーブスタガー ────────────────────────
 if (!reducedMotion) {
   document.querySelectorAll(".h1-line-inner").forEach((inner) => {

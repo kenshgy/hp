@@ -528,3 +528,36 @@ h1 {
 
 .site-nav a.is-active { color: var(--text); }
 .site-nav a.is-active::after { transform: scaleX(1); }
+
+/* ─── Skip link ───────────────────────── */
+
+.skip-link {
+  position: absolute;
+  top: -200%;
+  left: 16px;
+  padding: 8px 16px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+  font-size: 0.82rem;
+  border-radius: 0 0 4px 4px;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+
+.skip-link:focus { top: 0; }
+
+/* ─── Footer ──────────────────────────── */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+}
+
+.footer-copy {
+  font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
