@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kensuke Shigyo | 個人事業主ホームページ</title>
+    <title>Kensuke Shigyo | Independent IT Consultant</title>
     <meta
       name="description"
       content="判断を整理し、伝わる形に整えるためのWeb制作・技術支援・業務改善。"
@@ -11,101 +11,103 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@300;400;500&family=Space+Grotesk:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="page">
-      <header class="site-header">
-        <a class="brand" href="#top" aria-label="Home">
-          <span class="brand-name">Kensuke Shigyo</span>
-          <span class="brand-role">Independent IT Consultant</span>
-        </a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-name">Kensuke Shigyo</span>
+        <span class="brand-role">Independent IT Consultant</span>
+      </a>
 
-        <button
-          type="button"
-          class="nav-toggle"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          data-nav-toggle
-        >
-          <span></span>
-          <span></span>
-        </button>
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-nav-toggle
+      >
+        <span></span>
+        <span></span>
+      </button>
 
-        <div class="nav-panel" data-nav-panel>
-          <nav class="site-nav" id="site-nav" aria-label="Primary">
-            <a href="#statement" data-nav-link>考え方</a>
-            <a href="#services" data-nav-link>できること</a>
-            <a href="#style" data-nav-link>進め方</a>
-            <a href="#contact" data-nav-link>連絡先</a>
-          </nav>
-          <a class="header-contact" href="mailto:info@kenshgy.com">info@kenshgy.com</a>
-        </div>
-      </header>
+      <div class="nav-panel" data-nav-panel>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="#statement" data-nav-link>考え方</a>
+          <a href="#services" data-nav-link>できること</a>
+          <a href="#style" data-nav-link>進め方</a>
+          <a href="#contact" data-nav-link>連絡先</a>
+        </nav>
+        <a class="header-contact" href="mailto:info@kenshgy.com">info@kenshgy.com</a>
+      </div>
+    </header>
 
-      <main id="top">
+    <main id="top">
+      <div class="page">
         <section class="hero">
-          <div class="hero-meta">
-            <p class="hero-label">Independent Business</p>
-            <p class="hero-target">中小企業 / 個人事業主向け</p>
+          <div class="hero-eyebrow">
+            <span>Independent Business</span>
+            <span>中小企業 / 個人事業主向け</span>
           </div>
 
-          <div class="hero-grid">
-            <div class="hero-copy">
-              <p class="hero-kicker">Web制作 / 技術支援 / 業務改善</p>
-              <h1>整理の精度で、仕事の見え方と進み方を変える。</h1>
+          <div class="hero-headline">
+            <p class="hero-kicker">Web制作 / 技術支援 / 業務改善</p>
+            <h1>整理の精度で、仕事の見え方と進み方を変える。</h1>
+          </div>
+
+          <div class="hero-body">
+            <div class="hero-left">
               <p class="hero-lead">
                 依頼内容がまだ曖昧でも構いません。何を伝えるべきか、どこから手をつけるべきか、誰に向けて整えるべきかを整理し、必要な制作や改善まで実装ベースで支援します。
               </p>
+              <div class="hero-actions">
+                <a class="primary-link" href="mailto:info@kenshgy.com">info@kenshgy.com</a>
+                <a class="secondary-link" href="#services">できることを見る</a>
+              </div>
             </div>
 
-            <div class="hero-side">
+            <div class="hero-aside">
               <div class="hero-note">
-                <p class="note-label">立場</p>
+                <span class="note-label">立場</span>
                 <p class="note-text">
                   デザインだけ、実装だけではなく、事業側の判断と制作側の現実をつなぐ立場で仕事をしています。
                 </p>
               </div>
               <div class="hero-note">
-                <p class="note-label">対象</p>
+                <span class="note-label">対象</span>
                 <p class="note-text">
                   相談のしやすさと判断の明快さを重視したい中小企業、個人事業主、少人数の事業体を主な対象にしています。
                 </p>
               </div>
             </div>
           </div>
-
-          <div class="hero-actions">
-            <a class="primary-link" href="mailto:info@kenshgy.com">info@kenshgy.com</a>
-            <a class="secondary-link" href="#services">できることを見る</a>
-          </div>
         </section>
 
         <section class="statement section" id="statement">
-          <div class="section-head">
+          <div class="section-intro reveal">
             <p class="section-label">Statement</p>
             <h2>きれいに見せる前に、何を判断するべきかを整える。</h2>
           </div>
           <div class="statement-body">
-            <p>
+            <p class="reveal reveal-delay-1">
               事業サイトや改善施策がうまくいかない理由は、見た目の問題より前に、判断の軸が曖昧なことが多いと考えています。誰に向けるのか、何を伝えるのか、今やるべき範囲はどこまでか。その輪郭を定めないまま作ると、整って見えても機能しません。
             </p>
-            <p>
+            <p class="reveal reveal-delay-2">
               そのため、最初に行うのは過剰な提案ではなく、整理です。情報設計、導線、表現、実装、運用のどこに問題があるのかを見極め、必要なところだけを確実に前へ進めます。
             </p>
           </div>
         </section>
 
         <section class="services section" id="services">
-          <div class="section-head">
+          <div class="section-intro reveal">
             <p class="section-label">Services</p>
             <h2>できること</h2>
           </div>
           <div class="services-list">
-            <article class="service-item">
+            <article class="service-item reveal">
               <p class="service-index">01</p>
               <div class="service-body">
                 <h3>営業用Webサイトの設計と制作</h3>
@@ -115,7 +117,7 @@
               </div>
             </article>
 
-            <article class="service-item">
+            <article class="service-item reveal reveal-delay-1">
               <p class="service-index">02</p>
               <div class="service-body">
                 <h3>既存サイトや運用の改善支援</h3>
@@ -125,7 +127,7 @@
               </div>
             </article>
 
-            <article class="service-item">
+            <article class="service-item reveal reveal-delay-2">
               <p class="service-index">03</p>
               <div class="service-body">
                 <h3>技術支援と業務改善の伴走</h3>
@@ -138,25 +140,24 @@
         </section>
 
         <section class="style section" id="style">
-          <div class="section-head">
+          <div class="section-intro reveal">
             <p class="section-label">Working Style</p>
             <h2>進め方</h2>
           </div>
-
           <div class="style-grid">
-            <article class="style-card">
+            <article class="style-card reveal">
               <h3>まず状況を言語化する</h3>
               <p>
                 要件が固まっていなくても問題ありません。現状、目的、違和感、優先順位を整理し、何を決めるべきかを明らかにします。
               </p>
             </article>
-            <article class="style-card">
+            <article class="style-card reveal reveal-delay-1">
               <h3>必要以上に広げない</h3>
               <p>
                 初回から大きく作るのではなく、今必要な範囲を定めます。やらないことも含めて整理することで、判断の負荷を下げます。
               </p>
             </article>
-            <article class="style-card">
+            <article class="style-card reveal reveal-delay-2">
               <h3>実装まで切らずに進める</h3>
               <p>
                 提案で終わらせず、公開、修正、運用まで見据えて形にします。相談と制作の間に不自然な断絶を作りません。
@@ -166,15 +167,15 @@
         </section>
 
         <section class="contact section" id="contact">
-          <div class="section-head">
+          <div class="section-intro reveal">
             <p class="section-label">Contact</p>
             <h2>内容がまとまっていなくても、そのままご連絡ください。</h2>
           </div>
           <div class="contact-layout">
-            <p class="contact-copy">
+            <p class="contact-copy reveal reveal-delay-1">
               相談したいことが制作なのか改善なのか、あるいは単なる壁打ちなのか、まだ整理できていない段階でも構いません。現状の違和感や困りごとがわかる範囲で共有いただければ、どこから考えるべきかを一緒に整理します。
             </p>
-            <div class="contact-block">
+            <div class="contact-block reveal reveal-delay-2">
               <a class="contact-mail" href="mailto:info@kenshgy.com">info@kenshgy.com</a>
               <p class="contact-note">
                 初回はメールで受け付けています。内容確認後、順次返信します。
@@ -182,8 +183,8 @@
             </div>
           </div>
         </section>
-      </main>
-    </div>
+      </div>
+    </main>
 
     <script src="./script.js"></script>
   </body>
