@@ -1,4 +1,14 @@
-// Nav toggle
+// ─── Header: scroll 連動で背景を表示 ─────────────────────
+const header = document.querySelector("[data-header]");
+
+function updateHeader() {
+  header.classList.toggle("scrolled", window.scrollY > 40);
+}
+
+window.addEventListener("scroll", updateHeader, { passive: true });
+updateHeader();
+
+// ─── Nav toggle ───────────────────────────────────────────
 const navToggle = document.querySelector("[data-nav-toggle]");
 
 function closeNav() {
@@ -21,7 +31,7 @@ window.addEventListener("resize", () => {
   if (window.innerWidth > 760) closeNav();
 });
 
-// Scroll reveal
+// ─── Scroll reveal ────────────────────────────────────────
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -31,7 +41,7 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+  { threshold: 0.1, rootMargin: "0px 0px -32px 0px" }
 );
 
 document.querySelectorAll(".reveal").forEach((el) => {

@@ -6,21 +6,20 @@
     <title>Kensuke Shigyo | Independent IT Consultant</title>
     <meta
       name="description"
-      content="判断を整理し、伝わる形に整えるためのWeb制作・技術支援・業務改善。"
+      content="中小企業・個人事業主のWebサイト制作、技術支援、業務改善。判断と実装をつなぐ独立ITコンサルタント。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@300;400;500&family=Space+Grotesk:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+JP:wght@300;400&family=Space+Grotesk:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Home">
         <span class="brand-name">Kensuke Shigyo</span>
-        <span class="brand-role">Independent IT Consultant</span>
       </a>
 
       <button
@@ -36,154 +35,75 @@
 
       <div class="nav-panel" data-nav-panel>
         <nav class="site-nav" id="site-nav" aria-label="Primary">
-          <a href="#statement" data-nav-link>考え方</a>
-          <a href="#services" data-nav-link>できること</a>
-          <a href="#style" data-nav-link>進め方</a>
-          <a href="#contact" data-nav-link>連絡先</a>
+          <a href="#about" data-nav-link>About</a>
+          <a href="#services" data-nav-link>Services</a>
+          <a href="#contact" data-nav-link>Contact</a>
         </nav>
         <a class="header-contact" href="mailto:info@kenshgy.com">info@kenshgy.com</a>
       </div>
     </header>
 
     <main id="top">
-      <div class="page">
-        <section class="hero">
-          <div class="hero-eyebrow">
-            <span>Independent Business</span>
-            <span>中小企業 / 個人事業主向け</span>
-          </div>
+      <section class="hero">
+        <div class="hero-inner page">
+          <p class="hero-label anim-fade" style="--d:.05s">Independent IT Consultant</p>
 
-          <div class="hero-headline">
-            <p class="hero-kicker">Web制作 / 技術支援 / 業務改善</p>
-            <h1>整理の精度で、仕事の見え方と進み方を変える。</h1>
-          </div>
+          <h1>
+            <span class="h1-line"><span class="h1-line-inner" style="--d:.1s">判断と実装を、</span></span>
+            <span class="h1-line"><span class="h1-line-inner" style="--d:.22s">つなぐ仕事。</span></span>
+          </h1>
 
-          <div class="hero-body">
-            <div class="hero-left">
-              <p class="hero-lead">
-                依頼内容がまだ曖昧でも構いません。何を伝えるべきか、どこから手をつけるべきか、誰に向けて整えるべきかを整理し、必要な制作や改善まで実装ベースで支援します。
-              </p>
-              <div class="hero-actions">
-                <a class="primary-link" href="mailto:info@kenshgy.com">info@kenshgy.com</a>
-                <a class="secondary-link" href="#services">できることを見る</a>
-              </div>
-            </div>
+          <p class="hero-sub anim-fade" style="--d:.4s">
+            中小企業・個人事業主のWebサイト制作と技術支援。
+          </p>
 
-            <div class="hero-aside">
-              <div class="hero-note">
-                <span class="note-label">立場</span>
-                <p class="note-text">
-                  デザインだけ、実装だけではなく、事業側の判断と制作側の現実をつなぐ立場で仕事をしています。
-                </p>
-              </div>
-              <div class="hero-note">
-                <span class="note-label">対象</span>
-                <p class="note-text">
-                  相談のしやすさと判断の明快さを重視したい中小企業、個人事業主、少人数の事業体を主な対象にしています。
-                </p>
-              </div>
-            </div>
+          <div class="hero-cta anim-fade" style="--d:.52s">
+            <a class="cta-primary" href="mailto:info@kenshgy.com">相談する</a>
+            <span class="cta-email">info@kenshgy.com</span>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="statement section" id="statement">
-          <div class="section-intro reveal">
-            <p class="section-label">Statement</p>
-            <h2>きれいに見せる前に、何を判断するべきかを整える。</h2>
-          </div>
-          <div class="statement-body">
-            <p class="reveal reveal-delay-1">
-              事業サイトや改善施策がうまくいかない理由は、見た目の問題より前に、判断の軸が曖昧なことが多いと考えています。誰に向けるのか、何を伝えるのか、今やるべき範囲はどこまでか。その輪郭を定めないまま作ると、整って見えても機能しません。
-            </p>
-            <p class="reveal reveal-delay-2">
-              そのため、最初に行うのは過剰な提案ではなく、整理です。情報設計、導線、表現、実装、運用のどこに問題があるのかを見極め、必要なところだけを確実に前へ進めます。
+      <section class="about section" id="about">
+        <div class="page">
+          <div class="about-body reveal">
+            <p>
+              過剰な提案より、整理を先にする。何を伝えるか、誰に向けるか、どこまでやるか——その問いに答えてから手を動かします。
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="services section" id="services">
-          <div class="section-intro reveal">
-            <p class="section-label">Services</p>
-            <h2>できること</h2>
-          </div>
-          <div class="services-list">
-            <article class="service-item reveal">
-              <p class="service-index">01</p>
-              <div class="service-body">
-                <h3>営業用Webサイトの設計と制作</h3>
-                <p>
-                  コーポレートサイト、案内ページ、1ページ型の営業サイトなど、伝える内容を整理したうえで構成と実装を行います。
-                </p>
-              </div>
-            </article>
+      <section class="services section" id="services">
+        <div class="page">
+          <p class="section-label reveal">Services</p>
+          <ul class="services-list">
+            <li class="service-item reveal">
+              <span class="service-num">01</span>
+              <span class="service-title">Webサイトの設計と制作</span>
+            </li>
+            <li class="service-item reveal" style="--reveal-delay:.08s">
+              <span class="service-num">02</span>
+              <span class="service-title">既存サイト・運用フローの改善</span>
+            </li>
+            <li class="service-item reveal" style="--reveal-delay:.16s">
+              <span class="service-num">03</span>
+              <span class="service-title">技術支援と業務改善の伴走</span>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-            <article class="service-item reveal reveal-delay-1">
-              <p class="service-index">02</p>
-              <div class="service-body">
-                <h3>既存サイトや運用の改善支援</h3>
-                <p>
-                  すでにあるサイトや運用フローに対して、どこを直すと全体がよくなるかを整理し、必要な改修や見直しを進めます。
-                </p>
-              </div>
-            </article>
-
-            <article class="service-item reveal reveal-delay-2">
-              <p class="service-index">03</p>
-              <div class="service-body">
-                <h3>技術支援と業務改善の伴走</h3>
-                <p>
-                  単発の制作依頼に限らず、判断や実装に迷う場面で継続的に相談できる支援体制も扱います。
-                </p>
-              </div>
-            </article>
+      <section class="contact section" id="contact">
+        <div class="page">
+          <p class="section-label reveal">Contact</p>
+          <p class="contact-heading reveal" style="--reveal-delay:.06s">相談はメールで。</p>
+          <div class="contact-block reveal" style="--reveal-delay:.12s">
+            <a class="contact-mail" href="mailto:info@kenshgy.com">info@kenshgy.com</a>
+            <p class="contact-note">初回はメールで受け付けています。</p>
           </div>
-        </section>
-
-        <section class="style section" id="style">
-          <div class="section-intro reveal">
-            <p class="section-label">Working Style</p>
-            <h2>進め方</h2>
-          </div>
-          <div class="style-grid">
-            <article class="style-card reveal">
-              <h3>まず状況を言語化する</h3>
-              <p>
-                要件が固まっていなくても問題ありません。現状、目的、違和感、優先順位を整理し、何を決めるべきかを明らかにします。
-              </p>
-            </article>
-            <article class="style-card reveal reveal-delay-1">
-              <h3>必要以上に広げない</h3>
-              <p>
-                初回から大きく作るのではなく、今必要な範囲を定めます。やらないことも含めて整理することで、判断の負荷を下げます。
-              </p>
-            </article>
-            <article class="style-card reveal reveal-delay-2">
-              <h3>実装まで切らずに進める</h3>
-              <p>
-                提案で終わらせず、公開、修正、運用まで見据えて形にします。相談と制作の間に不自然な断絶を作りません。
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="contact section" id="contact">
-          <div class="section-intro reveal">
-            <p class="section-label">Contact</p>
-            <h2>内容がまとまっていなくても、そのままご連絡ください。</h2>
-          </div>
-          <div class="contact-layout">
-            <p class="contact-copy reveal reveal-delay-1">
-              相談したいことが制作なのか改善なのか、あるいは単なる壁打ちなのか、まだ整理できていない段階でも構いません。現状の違和感や困りごとがわかる範囲で共有いただければ、どこから考えるべきかを一緒に整理します。
-            </p>
-            <div class="contact-block reveal reveal-delay-2">
-              <a class="contact-mail" href="mailto:info@kenshgy.com">info@kenshgy.com</a>
-              <p class="contact-note">
-                初回はメールで受け付けています。内容確認後、順次返信します。
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
 
     <script src="./script.js"></script>
