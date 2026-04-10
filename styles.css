@@ -52,10 +52,19 @@ main { padding-top: 64px; }
   justify-content: space-between;
   height: 64px;
   padding: 0 40px;
-  background: rgba(14, 13, 12, 0.88);
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+}
+
+/* backdrop-filter を疑似要素に分離 — fixed 子要素の包含ブロック問題を回避 */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 13, 12, 0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  z-index: -1;
 }
 
 .brand {
@@ -197,7 +206,7 @@ body.is-nav-open .nav-toggle span:last-child {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 h1 {
@@ -360,12 +369,11 @@ h3 {
   gap: 24px;
   padding: 28px 0;
   border-bottom: 1px solid var(--border);
-  padding-left: 0;
-  transition: padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .service-item:hover {
-  padding-left: 10px;
+  transform: translateX(10px);
 }
 
 .service-index {
@@ -444,15 +452,30 @@ h3 {
 
 .contact-mail {
   display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
   color: var(--accent);
-  transition: opacity 0.2s;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(200, 169, 106, 0.35);
+  transition: border-color 0.2s, opacity 0.2s;
+}
+
+.contact-mail::after {
+  content: "→";
+  font-size: 0.9em;
+  transition: transform 0.2s;
 }
 
 .contact-mail:hover {
-  opacity: 0.65;
+  border-color: var(--accent);
+  opacity: 0.85;
+}
+
+.contact-mail:hover::after {
+  transform: translateX(4px);
 }
 
 .contact-note {
