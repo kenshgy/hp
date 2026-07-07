@@ -3,16 +3,16 @@
 // スクロール・マウス・ナビ操作に反応するステートマシンで動く。
 (() => {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reducedMotion || window.innerWidth <= 760) return;
+  if (reducedMotion) return;
 
-  const SCALE = 3;
+  const SCALE = window.innerWidth <= 760 ? 2 : 3;
   const W = 12;
   const H = 16;
 
   // パレット: . 透明 / o アウトライン / s 肌 / a アクセント / l 脚
   const accent =
     getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#2b4c8c";
-  const COLORS = { o: "#111110", s: "#e8c49a", a: accent, l: "#3a3733" };
+  const COLORS = { o: "#0a0b10", s: "#e8c49a", a: accent, l: "#c9cdd8" };
 
   // 12x16 のフレーム定義（文字列1行 = 1ピクセル行）
   const FRAMES = {
@@ -234,6 +234,25 @@
           Math.max(state.x + dir * 120, 40),
           window.innerWidth - 60
         );
+      }
+    },
+    { passive: true }
+  );
+
+  // タップ: キャラの近くならジャンプ、遠くならそちらへ歩く
+  window.addEventListener(
+    "touchstart",
+    (e) => {
+      const t = e.touches[0];
+      if (!t) return;
+      wake();
+      const cx = state.x + (W * SCALE) / 2;
+      const dist = Math.hypot(t.clientX - cx, t.clientY - (state.y - (H * SCALE) / 2));
+      if (dist < 90 && !state.jumping) {
+        state.jumping = true;
+        state.vy = -5;
+      } else {
+        state.targetX = Math.min(Math.max(t.clientX - (W * SCALE) / 2, 20), window.innerWidth - 50);
       }
     },
     { passive: true }
