@@ -5,8 +5,19 @@
   --muted: #888480;
   --border: rgba(17, 17, 16, 0.1);
   --border-strong: rgba(17, 17, 16, 0.18);
+  --accent: #2b4c8c;
   --content: 1080px;
   --header-h: 60px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -21,6 +32,19 @@ body {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   line-height: 1.7;
+}
+
+/* 極薄の方眼テクスチャ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(17, 17, 16, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 16, 0.025) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+  z-index: -1;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -174,11 +198,47 @@ body.is-nav-open .nav-toggle span:last-child {
 /* ─── Hero ────────────────────────────── */
 
 .hero {
+  position: relative;
   display: flex;
   align-items: center;
   min-height: 100svh;
   padding: calc(var(--header-h) + 40px) 0 80px;
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.hero-watermark {
+  position: absolute;
+  right: -0.06em;
+  bottom: -0.28em;
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(14rem, 32vw, 30rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border);
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 0;
+  margin-top: 56px;
+  font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.hero-meta span {
+  padding: 0 16px;
+  border-left: 1px solid var(--border-strong);
+}
+
+.hero-meta span:first-child {
+  padding-left: 0;
+  border-left: none;
 }
 
 .hero-inner {
@@ -255,9 +315,9 @@ h1 {
   transition: transform 0.2s;
 }
 
-.cta-primary:hover { opacity: 0.75; }
+.cta-primary:hover { background: var(--accent); }
 .cta-primary:hover::after { transform: translateX(3px); }
-.cta-primary { transition: opacity 0.2s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.cta-primary { transition: background 0.25s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
 
 .cta-email {
   font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
@@ -301,6 +361,16 @@ h1 {
   max-width: 38rem;
 }
 
+.about-lead {
+  display: block;
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
 /* ─── Services ────────────────────────── */
 
 .services-list {
@@ -311,7 +381,7 @@ h1 {
   display: flex;
   align-items: baseline;
   gap: 28px;
-  padding: 24px 0;
+  padding: 28px 0;
   border-bottom: 1px solid var(--border);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               color 0.25s;
@@ -331,7 +401,7 @@ h1 {
 }
 
 .service-item:hover .service-num {
-  color: var(--muted);
+  color: var(--accent);
 }
 
 .service-title {
@@ -340,7 +410,32 @@ h1 {
   letter-spacing: 0;
 }
 
+.service-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 34rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.35s ease 0.06s,
+    margin-top 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item:hover .service-desc,
+.service-item:focus-within .service-desc {
+  max-height: 5em;
+  opacity: 1;
+  margin-top: 8px;
+}
+
 /* ─── Contact ─────────────────────────── */
+
+.contact {
+  background: var(--surface);
+}
 
 .contact-heading {
   font-family: "Instrument Serif", serif;
@@ -376,7 +471,7 @@ h1 {
   transition: transform 0.2s;
 }
 
-.contact-mail:hover { border-color: var(--text); }
+.contact-mail:hover { border-color: var(--accent); color: var(--accent); }
 .contact-mail:hover::after { transform: translateX(4px); }
 
 .contact-note {
@@ -492,6 +587,8 @@ h1 {
 
   .hero-cta { flex-direction: column; align-items: flex-start; gap: 12px; }
 
+  .hero-meta { flex-wrap: wrap; row-gap: 8px; margin-top: 40px; }
+
   .cta-email { display: none; }
 
   .service-item { gap: 16px; }
@@ -540,7 +637,7 @@ h1 {
 /* ─── Active nav section ──────────────── */
 
 .site-nav a.is-active { color: var(--text); }
-.site-nav a.is-active::after { transform: scaleX(1); }
+.site-nav a.is-active::after { transform: scaleX(1); background: var(--accent); }
 
 /* ─── Skip link ───────────────────────── */
 
@@ -559,6 +656,22 @@ h1 {
 }
 
 .skip-link:focus { top: 0; }
+
+/* ─── Pixel character ─────────────────── */
+
+.pixel-pal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 45;
+  image-rendering: pixelated;
+  pointer-events: none;
+  will-change: transform;
+}
+
+@media (max-width: 760px), (prefers-reduced-motion: reduce) {
+  .pixel-pal { display: none; }
+}
 
 /* ─── Footer ──────────────────────────── */
 

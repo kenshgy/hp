@@ -81,6 +81,7 @@
 
     <main id="top">
       <section class="hero">
+        <span class="hero-watermark" aria-hidden="true">KS</span>
         <div class="hero-inner page">
           <p class="hero-label anim-fade" style="--d:.05s">IT Consultant</p>
 
@@ -97,6 +98,10 @@
             <a class="cta-primary" href="mailto:info@kenshgy.com">相談する</a>
             <span class="cta-email">info@kenshgy.com</span>
           </div>
+
+          <p class="hero-meta anim-fade" style="--d:.64s">
+            <span>Web制作</span><span>技術支援</span><span>業務改善</span>
+          </p>
         </div>
       </section>
 
@@ -104,7 +109,7 @@
         <div class="page">
           <div class="about-body reveal">
             <p>
-              過剰な提案より、整理を先にする。何を伝えるか、誰に向けるか、どこまでやるか——その問いに答えてから手を動かします。
+              <span class="about-lead">過剰な提案より、整理を先にする。</span>何を伝えるか、誰に向けるか、どこまでやるか——その問いに答えてから手を動かします。
             </p>
           </div>
         </div>
@@ -116,15 +121,24 @@
           <ul class="services-list">
             <li class="service-item reveal">
               <span class="service-num">01</span>
-              <span class="service-title">Webサイトの設計と制作</span>
+              <div class="service-body">
+                <span class="service-title">Webサイトの設計と制作</span>
+                <p class="service-desc">目的と読み手を整理してから、構成・文章・実装までを一貫して行います。</p>
+              </div>
             </li>
             <li class="service-item reveal" style="--reveal-delay:.08s">
               <span class="service-num">02</span>
-              <span class="service-title">既存サイト・運用フローの改善</span>
+              <div class="service-body">
+                <span class="service-title">既存サイト・運用フローの改善</span>
+                <p class="service-desc">今あるものを活かしながら、更新しやすく壊れにくい形に整えます。</p>
+              </div>
             </li>
             <li class="service-item reveal" style="--reveal-delay:.16s">
               <span class="service-num">03</span>
-              <span class="service-title">技術支援と業務改善の伴走</span>
+              <div class="service-body">
+                <span class="service-title">技術支援と業務改善の伴走</span>
+                <p class="service-desc">ツール選定から自動化まで、判断の相談相手として継続的に支援します。</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -149,5 +163,6 @@
     </footer>
 
     <script src="./script.js"></script>
+    <script src="./character.js"></script>
   </body>
 </html>
